@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php $this->block('title');?>OverDocs.net<?php $this->end(); ?></title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
-    <link rel="stylesheet" href="<?= $base ?>/styles/overdocs.css" async>
+    <link rel="stylesheet" href="<?= $base ?>/styles/overdocs.css">
     <link rel="icon" href="<?= $base ?>/favicon.ico">
     <script>
         var OverDocs = {

@@ -16,7 +16,11 @@
         <h2>Or have a look at the categories…</h2>
         <ul>
         <?php foreach ($categories as $slug => $name): ?>
-            <li><a href="<?= $app->url('category', ['category' => $slug]) ?>"><img src="<?= $base ?>/images/categories/<?= $slug ?>.png"><?= $this->escape($name) ?></a></li>
+            <li>
+                <a href="<?= $app->url('category', ['category' => $slug]) ?>">
+                    <img src="<?= $base ?>/images/categories/<?= $slug ?>.png" alt=""><?= $this->escape($name) ?>
+                </a>
+            </li>
         <?php endforeach; ?>
         </ul>
     </nav>
