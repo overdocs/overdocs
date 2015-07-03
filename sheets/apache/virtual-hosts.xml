@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Creating virtual host</title>
+    <summary>How to create a virtual host in Apache.</summary>
+    <cheat title="Virtual hosts" id="vhosts">
+        <p>
+            Using virtual hosts (vhosts) in Apache you can map specified directory to the domain name.
+            It is not only needed when you want to serve more than one domain on the server, but could
+            be also useful during local development.
+        </p>
+        <p>
+            In order to define new virtual host, add following code to your Apache config. This is the
+            simplest form, there are more directives you can use, but below one will work.
+        </p>
+        <snippet language="none">
+<![CDATA[<VirtualHost *:80>
+    DocumentRoot [path to the site]
+    ServerName domain.tld # replace it by your own value
+</VirtualHost>]]>
+        </snippet>
+        <p>
+            When doing local development, you need to map specified domain name to respective IP address,
+            usually <code>127.0.0.1</code>. Theoretically you can set up your own DNS server, but it's
+            unneeded complication, unless you don't use advanced features, such as domain wildcards etc.
+        </p>
+        <p>
+            Open the file <code>/etc/hots</code> (or <code>X:\Windows\system32\drivers\etc\hosts</code> on
+            Windows) and add a following entry to it:
+        </p>
+        <snippet language="none">
+            <![CDATA[127.0.0.1 domain.tld]]>
+        </snippet>
+        <p>
+            Restart Apache process if it was running and you should be able to open <code>domain.tld</code>
+            in your browser.
+        </p>
+        <note>
+            <p>
+                After you add your first virtual host, you will probably encounter a problem with accessing
+                <code>http://localhost</code>. The simplest way to fix it is to add following entry <strong>
+                before</strong> your custom hosts:
+            </p>
+            <snippet language="none">
+<![CDATA[<VirtualHost *:80>
+    DocumentRoot [path to htdocs folder]
+    ServerName localhost
+</VirtualHost>]]>
+            </snippet>
+            <p>
+                <code>localhost</code> is mapped to <code>127.0.0.1</code> automatically, you don't need to
+                add anything to <code>hosts</code> file.
+            </p>
+        </note>
+    </cheat>
+
+    <learn-more>
+        <link href="http://httpd.apache.org/docs/2.2/vhosts/examples.html">More VirtualHosts examples</link>
+    </learn-more>
+
+    <keywords>
+        <keyword>apache</keyword>
+        <keyword>server</keyword>
+        <keyword>virtual</keyword>
+        <keyword>host</keyword>
+        <keyword>vhost</keyword>
+    </keywords>
+</sheet>

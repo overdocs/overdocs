@@ -1,0 +1,37 @@
+{
+  "name": "overdocs",
+  "version": "0.0.0",
+  "description": "Cheatsheets for developers.",
+  "private": true,
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/overdocs/overdocs.git"
+  },
+  "keywords": [
+    "overdocs"
+  ],
+  "contributors": [
+    {
+      "name": "winek",
+      "email": "olgierd.grzyb@gmail.com",
+      "url": "http://winek.me/"
+    },
+    {
+      "name": "Sobak",
+      "email": "sobak@sobak.pl",
+      "url": "http://sobak.pl/"
+    }
+  ],
+  "license": "GPL",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat-sourcemap": "^1.3.1",
+    "gulp-concat-util": "^0.5.2",
+    "gulp-csso": "^1.0.0",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6"
+  }
+}

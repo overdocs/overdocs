@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Command Line Interface</title>
+    <summary>Reference for basic usage of CLI in PHP.</summary>
+    <cheat title="Differences to other SAPIs" id="differences">
+        <p>
+            <abbr>CLI</abbr> is a special type of <abbr>SAPI</abbr>. Due to this fact, it
+            differs in some ways you should be aware of:
+        </p>
+        <ul>
+            <li>No HTTP headers are written to the output (because it doesn't run in the browser);</li>
+            <li>HTML is not parsed (PHP error messages also have HTML tags disabled);</li>
+            <li>Execution time is unlimited;</li>
+            <li>There are no <code>$_POST</code> or <code>$_GET</code> variables.</li>
+        </ul>
+    </cheat>
+    <cheat title="Accessing user input" id="user-input">
+        <p>
+            In order to access user input, you can use the following global variables:
+        </p>
+        <ul>
+            <li>
+                <code>$argv</code> - array of all arguments/options passed to the script. Its first
+                element (<code>$argv[0]</code>) is the name of executed script itself.
+            </li>
+            <li>
+                <code>$argc</code> - the number of arguments passed to the script; it's an equivalent of
+                equivalent of <code>count($argv)</code> (note it includes the script filename).
+            </li>
+        </ul>
+
+        <snippet language="php">
+<![CDATA[<?php
+
+if ($argc < 2) {
+    echo "Error: This program expects at least one argument.";
+    exit(1);
+}]]>
+        </snippet>
+
+        <p>
+            You can also use input/output streams. This can be achieved in two ways: opening new stream or
+            using constants <code>STDIN</code>, <code>STDOUT</code> and <code>STDERR</code>, which hold
+            already opened input, output and error streams, respectively.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+$stdin = fopen('php://stdin', 'r');
+
+// Predefined constants are file handlers, so you can use them
+// with functions like:
+$line = trim(fgets(STDIN)); // Reads one line from STDIN
+
+// Operations for other types of streams are performed in the same way]]>
+        </snippet>
+        <note>
+            <p>
+                Function <link href="http://php.net/getopt">getopt()</link> can be very useful when parsing
+                user input to the CLI script.
+            </p>
+        </note>
+    </cheat>
+    <cheat title="Checking current SAPI" id="checking-sapi">
+        <p>
+            No matter if you want to restrict script to be run only using CLI or just customize output
+            depending on destination: browser or terminal - verifying currently used SAPI is very useful
+            possibility.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+if (PHP_SAPI !== 'cli') {
+    echo "Error: The program should be run from terminal.\n";
+    exit;
+}]]>
+        </snippet>
+        <p>
+            You can also use <code>php_sapi_name()</code> as an equivalent of <code>PHP_SAPI</code> constant.
+            Remember that <abbr>SAPI</abbr> name is always written in lowercase.
+        </p>
+    </cheat>
+
+    <learn-more>
+        <link href="http://php.net/features.commandline">Chapter describing CLI mode in PHP manual</link>
+        <link href="http://symfony.com/doc/current/components/console/introduction.html">
+            Symfony Console component
+        </link>
+    </learn-more>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>cli</keyword>
+        <keyword>sapi</keyword>
+    </keywords>
+</sheet>

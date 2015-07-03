@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Parameter order</title>
+    <summary>An attempt to solve haystack-needle vs. needle-haystack mystery.</summary>
+    <cheat title="Introduction" id="introduction">
+        <p>
+            In its early days PHP was mostly a set functions borrowed from other technologies,
+            such as C or Perl. Unfortunately, there wasn't much attention paid to the consistency
+            of the standard library. It had been assumed that functions' prototypes which are equal to their
+            originals were going to be more intuitive.
+        </p>
+        <p>
+            It is a sad situation, which is not going to abruptly improve, but
+            you can memorize a simple rule to save your time.
+        </p>
+    </cheat>
+    <cheat title="String functions" id="string-functions">
+        <p>
+            String functions are <strong>haystack, needle</strong>. There is a <em>very simple</em>
+            way to remember that. Strings can be associated with an alphabet and "h" comes before
+            "n". Voilà!
+        </p>
+        <snippet language="php">
+<![CDATA[int strpos  ( string $haystack  , mixed $needle  [, int $offset= 0  ] )
+string stristr ( string $haystack , mixed $needle [, bool $before_needle = false ] )]]>
+        </snippet>
+    </cheat>
+    <cheat title="Array functions" id="array-functions">
+        <p>
+            Knowing the rule presented above, it is probably the best to remember that parameters for
+            functions operating on arrays are in reverse order.
+        </p>
+        <snippet language="php">
+<![CDATA[bool in_array  ( mixed $needle  , array $haystack  [, bool $strict  ] )
+mixed array_search  ( mixed $needle  , array $haystack  [, bool $strict  ] )]]>
+        </snippet>
+    </cheat>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>function</keyword>
+        <keyword>parameter</keyword>
+        <keyword>order</keyword>
+    </keywords>
+</sheet>

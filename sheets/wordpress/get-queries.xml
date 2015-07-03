@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Get executed queries</title>
+    <summary>How to get the list of executed SQL queries in Wordpress.</summary>
+    <cheat title="Getting executed queries" id="query-logging">
+        <p>
+            Getting full list of <abbr>SQL</abbr> queries executed during a request could be
+            very helpful in debugging. Luckily, WordPress provides convinient way to achieve
+            it.
+        </p>
+        <p>
+            First we need to enable query logging in <code>wp-config.php</code>. More specifically,
+            we need to set <code>SAVEQUERIES</code> constant to <code>true</code>. Place code like
+            this somewhere in the config file:
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+define('SAVEQUERIES', true);]]>
+        </snippet>
+        <p>
+            Then you can use <code>$wpdb->queries</code> property to obtain information about the
+            executed queries. <code>$wpdb</code> is a global object of WordPress database class,
+            so you probably have it available.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+// Make a classic var_dump()
+var_dump($wpdb->queries);
+
+// Or echo just SQL commands
+foreach($wpdb->queries as $query) {
+    echo $query[0] . "\n";
+}]]>
+        </snippet>
+        <p>
+            The array is multidimensional - entry for each query consists of <abbr>SQL</abbr> command
+            itself, time of the execution and caller.
+        </p>
+    </cheat>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>wordpress</keyword>
+        <keyword>mysql</keyword>
+        <keyword>logging</keyword>
+        <keyword>debug</keyword>
+    </keywords>
+</sheet>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Validating email address</title>
+    <summary>How to check the syntax and correctness of an email address in PHP.</summary>
+    <cheat title="Syntax validation" id="syntax" version="PHP 5.2+">
+        <p>
+            The best way to validate email syntax is to use <link
+            href="http://php.net/manual/en/function.filter-var.php">filter_var()</link>.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+if (filter_var('foo@example.com', FILTER_VALIDATE_EMAIL)) {
+    echo 'email is correct';
+}]]>
+        </snippet>
+        <note>
+            <p><code>filter_var()</code> checks for syntactical correctness. A successful check
+            does not guarantee actual existence of an address.</p>
+        </note>
+        <note>
+            <p>
+                Remember, <code>filter_var</code> returns filtered string, not a boolean value,
+                so you should cast it where appropriate.
+            </p>
+        </note>
+    </cheat>
+
+    <cheat title="Validating MX record" id="mx-record">
+        <p>
+            Another aspect you can check is the presence of an <abbr>MX</abbr> record for the
+            domain name. It cannot ensure you that specified address exists, but it verifies
+            the server associated with it is capable of exchanging emails.
+        </p>
+    </cheat>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>validation</keyword>
+        <keyword>security</keyword>
+        <keyword>email</keyword>
+    </keywords>
+</sheet>

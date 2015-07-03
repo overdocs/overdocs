@@ -1,0 +1,32 @@
+{
+    "browser": true,
+    "curly": true,
+    "devel": true,
+    "eqeqeq": true,
+    "esnext": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "indent": 4,
+    "jquery": true,
+    "latedef": true,
+    "maxcomplexity": 6,
+    "maxdepth": 3,
+    "maxlen": 120,
+    "newcap": true,
+    "nonew": true,
+    "unused": true,
+    "predef": [
+        "define",
+        "require",
+        "Backbone",
+        "Fuse",
+        "Prism",
+        "OverDocs",
+        "$",
+        "_"
+    ],
+    "quotmark": "single",
+    "strict": true,
+    "undef": true
+}

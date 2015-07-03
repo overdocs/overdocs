@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Get executed queries</title>
+    <summary>How to get the list of executed SQL queries in Laravel.</summary>
+    <cheat title="Getting executed queries" id="query-logging">
+        <p>
+            Getting full list of <abbr>SQL</abbr> queries executed during a request could be
+            very helpful in debugging. There is the simple way to return an array of all
+            queries, either produced by Eloquent or <code>DB</code> class.
+        </p>
+        <p>
+            Starting with Laravel 5 you need to enable query logging first. This is disabled
+            by default to save some memory. Place following code before you execute any query.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+DB::enableQueryLogging();]]>
+        </snippet>
+        <p>
+            Then you can fetch the queries using <code>DB::getQueryLog()</code>. You can perform
+            any operations on returned array or just use builtin <code>dd()</code> function if you
+            need quick dump.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+$queries = DB::getQueryLog();
+dd($queries); // Just dump the array and stop script execution]]>
+        </snippet>
+        <p>
+            The array is multidimensional - entry for each query consists of <abbr>SQL</abbr> command
+            itself and nested array with currently binded values.
+        </p>
+    </cheat>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>laravel</keyword>
+        <keyword>mysql</keyword>
+        <keyword>logging</keyword>
+        <keyword>debug</keyword>
+    </keywords>
+</sheet>

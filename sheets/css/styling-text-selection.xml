@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Styling text selection</title>
+    <summary>How to change color or background of selected text using CSS.</summary>
+    <cheat title="Styling text selection" id="styling" version="CSS 3+">
+        <p>
+            One of the unofficial CSS 3 pseudoselectors is <code>::selection</code>. It allows to change
+            background or color of currently selected text. At this moment, vendor prefixes are required,
+            though.
+        </p>
+        <snippet language="css">
+<![CDATA[/* Change selection background for all elements */
+::selection {
+    background: #ffb7b7;
+}
+::-moz-selection {
+    background: #ffb7b7; /* prefixed version for Gecko */
+}
+
+/* Override for specified selector only */
+p.important::selection {
+    background: red;
+    color: white;
+}
+p.important::-moz-selection {
+    background: red;
+    color: white;
+}]]>
+        </snippet>
+        <warning>
+            <p>
+                You can not combine prefixed and unprefixed selector into one, like this: <code>::selection,
+                ::-moz-selection</code>! This will not work, because when browser can't understand any part
+                of the selector, the whole rule is ignored.
+            </p>
+        </warning>
+        <note>
+            <p>
+                <code>::selection</code> was the part of CSS 3 specification, but it was then removed. Now,
+                it is a part of the <link href="http://dev.w3.org/csswg/css-pseudo/">
+                CSS Pseudo-Elements Module Level 4</link>.
+            </p>
+        </note>
+    </cheat>
+
+    <learn-more>
+        <link href="http://caniuse.com/#feat=css-selection">Browser support - caniuse.com</link>
+        <link href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection">Documentation on MDN</link>
+    </learn-more>
+
+    <keywords>
+        <keyword>css</keyword>
+        <keyword>css3</keyword>
+    </keywords>
+</sheet>

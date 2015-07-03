@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>CSS selectors</title>
+    <summary>Reference for possible CSS selectors.</summary>
+    <cheat title="Basic selectors" id="selectors">
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td><code>*</code></td>
+                <td>All elements in <abbr>DOM</abbr> tree</td>
+            </tr>
+            <tr>
+                <td><code>div</code></td>
+                <td>All <code>div</code> tags</td>
+            </tr>
+            <tr>
+                <td><code>div, span</code></td>
+                <td>All <code>div</code> and <code>span</code> tags</td>
+            </tr>
+            <tr>
+                <td><code>#source</code></td>
+                <td>Element with ID <code>source</code></td>
+            </tr>
+            <tr>
+                <td><code>.important</code></td>
+                <td>All elements with class <code>important</code></td>
+            </tr>
+            <tr>
+                <td><code>pre#source</code></td>
+                <td><code>pre</code> tag with id <code>source</code></td>
+            </tr>
+            <tr>
+                <td><code>li.important</code></td>
+                <td>All <code>li</code> tags with class <code>important</code></td>
+            </tr>
+            <tr>
+                <td><code>#code *</code></td>
+                <td>All elements nested in <code>#code</code></td>
+            </tr>
+            <tr>
+                <td><code>li.important > a</code></td>
+                <td>All links nested <em>directly</em> in <code>li.important</code></td>
+            </tr>
+            <tr>
+                <td><code>li.important a</code></td>
+                <td>All links nested (directly or not) in <code>li.important</code></td>
+            </tr>
+            <tr>
+                <td><code>input[required]</code></td>
+                <td><code>input</code> tags with attribute <code>required</code></td>
+            </tr>
+            <tr>
+                <td><code>button[type="result"]</code></td>
+                <td>Buttons with <code>type</code> set to <code>reset</code></td>
+            </tr>
+            <tr>
+                <td><code>a[href*="google"]</code></td>
+                <td>All links with <code>href</code> containing phrase <em>google</em></td>
+            </tr>
+        </table>
+    </cheat>
+
+    <cheat title="Pseudo-elements" id="pseudo-elements">
+        <p>
+            Also known as <em>pseudo-selectors</em>.
+        </p>
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td><code>::after</code></td>
+                <td><em>None.</em></td>
+            </tr>
+            <tr>
+                <td><code>::before</code></td>
+                <td><em>None.</em></td>
+            </tr>
+            <tr>
+                <td><code>::first-letter</code></td>
+                <td>
+                    First letter of the first line in a block element.
+                    <link href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter">
+                        More details
+                    </link>.
+                </td>
+            </tr>
+            <tr>
+                <td><code>::first-line</code></td>
+                <td>First line of an element.</td>
+            </tr>
+            <tr>
+                <td><code>::selection</code></td>
+                <td>
+                    Selected text. <link-sheet category="css" id="styling-text-selection">More</link-sheet>.
+                </td>
+            </tr>
+        </table>
+        <note>
+            <p>
+                According to CSS 3 specification, pseudo elements must be prefixed with double colon
+                (<code>::</code>), to distinguish them from pseudo classes. However, note that IE 8 and
+                below does not support this notation. CSS 2 spec uses single colon.
+            </p>
+        </note>
+    </cheat>
+
+    <keywords>
+        <keyword>css</keyword>
+        <keyword>selectors</keyword>
+        <keyword>child</keyword>
+        <keyword>sibbling</keyword>
+        <keyword>parent</keyword>
+    </keywords>
+</sheet>

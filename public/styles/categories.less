@@ -1,0 +1,35 @@
+.categories {
+    .clearfix();
+}
+.categories ul {
+    padding: 0;
+}
+.categories li {
+    font-size: 1.6em;
+    line-height: 64px;
+    float: left;
+    list-style: none;
+}
+.categories a {
+    display: block;
+    padding: 20px;
+    color: @md-light-blue-700;
+    &:hover {
+        color: @md-light-blue-900;
+        text-decoration: none;
+    }
+    &:hover img {
+        opacity: 1;
+        filter: none;
+        -webkit-filter: grayscale(0%);
+    }
+}
+.categories img {
+    vertical-align: middle;
+    transition: 0.1s linear all;
+    margin-right: 10px;
+    opacity: 0.8;
+    filter: gray;                       // IE 6-9
+    filter: grayscale(100%);            // Fx 35
+    -webkit-filter: grayscale(100%);    // guess what
+}

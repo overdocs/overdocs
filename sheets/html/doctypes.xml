@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>HTML doctypes</title>
+    <summary>List of possible HTML doctypes and differences between them.</summary>
+    <cheat title="HTML 5" id="html5">
+        <p>
+            HTML 5 provides the simplest <abbr>DTD</abbr>, which is case-insensitive:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE html>]]>
+        </snippet>
+    </cheat>
+
+    <cheat title="XHTML" id="xhtml">
+        <p>
+            <strong>XHTML 1.1</strong> has only one valid DTD declaration:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">]]>
+        </snippet>
+        <p>
+            <strong>XHTML 1.0</strong> provides more DTDs with some differences. The most
+            recommended is of course <em>strict</em>. It does not allow for deprecated tags
+            and attributes.
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">]]>
+        </snippet>
+        <p>
+            There is also transitional (or <em>loose</em>) version of XHTML 1.0 DTD. It allows presentational
+            markup or or deprecated elements (such as <code>font</code>). It <strong>does not</strong> allow
+            framesets.
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">]]>
+        </snippet>
+        <p>
+            If you want to use frames, use the <em>Frameset</em> version:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">]]>
+        </snippet>
+    </cheat>
+
+    <cheat title="HTML 4.01" id="html4">
+        <p>
+            <strong>HTML 4.01</strong> also comes with few kinds of declarations possible. They meanings
+            are the same as their XHTML 1.0 equivalents.
+        </p>
+        <p>
+            Strict version:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">]]>
+        </snippet>
+        <p>
+            <em>Transitional</em>:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">]]>
+        </snippet>
+        <p>
+            and <em>frameset</em>:
+        </p>
+        <snippet language="markup">
+<![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">]]>
+        </snippet>
+        <note>
+            <p>
+                The difference is, that in HTML 4.01 you can omit so called <em>system identifier</em> and
+                thus declaration becomes shorter:
+            </p>
+            <snippet language="markup">
+<![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">]]>
+            </snippet>
+        </note>
+    </cheat>
+
+    <learn-more>
+        <link href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">W3C QA: valid doctypes list</link>
+        <link href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#the-doctype">
+            Doctypes in HTML 5.1 living draft.
+        </link>
+    </learn-more>
+
+    <keywords>
+        <keyword>html</keyword>
+        <keyword>html5</keyword>
+        <keyword>dtd</keyword>
+        <keyword>transitional</keyword>
+        <keyword>frameset</keyword>
+        <keyword>strict</keyword>
+        <keyword>loose</keyword>
+    </keywords>
+</sheet>

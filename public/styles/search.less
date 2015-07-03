@@ -1,0 +1,62 @@
+.search-input {
+    .size(2, 3);
+    font-family: inherit;
+    background: @bg-search;
+    border: 5px @br-input solid;
+    border-radius: 8px;
+    margin: .3em 0 0 0;
+    outline: none;
+    padding: 0 16px;
+    transition: 0.2s linear border-color;
+    width: 75%;
+    &:focus {
+        border: 5px @bg-input solid;
+    }
+}
+@media screen and (max-device-width: @break-md) {
+    .search-input {
+        .size(1, 2);
+    }
+}
+// Hack for specifity... sorry!
+.search--hasResults .search-input.search-input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-results {
+    background: @bg-search;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+    padding: 10px 20px 20px;
+    width: 75%;
+}
+.search--hasResults .search-results {
+    display: block;
+}
+.search-result {
+    border: 4px @bg-search solid;
+    border-radius: 6px;
+    display: block;
+    padding: 13px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.search-result--selected {
+    background: @bg-search-result-selected;
+    border-color: @br-search-result-selected;
+}
+.search-result-title {
+    color: @fg-search-result-title;
+    font-size: 1.1em;
+    margin: 0 0 .2em 0;
+}
+.search-result-summary {
+    color: @fg-search-result-summary;
+    font-size: .9em;
+}
+.search-result-category {
+    color: @fg-search-result-meta;
+}

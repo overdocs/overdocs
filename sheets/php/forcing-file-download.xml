@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<sheet xmlns="http://overdocs.net/overdocs">
+    <title>Forcing file download</title>
+    <summary>How to force file download regardless of its type.</summary>
+    <cheat title="Using PHP" id="php">
+        <p>
+            The most reliable way to force file download is to set proper headers using a server-side
+            technology such as PHP. Theoretically, browser can just ignore the headers but it's unlikely
+            to happen.
+        </p>
+        <snippet language="php">
+<![CDATA[<?php
+$filename = 'test.txt';
+
+header('Content-Type: text/plain'); // Set file MIME type here
+header('Content-Disposition: attachment; filename="' . basename($filename) . '";');
+header('Content-Length:' . filesize($filename));
+
+readfile($filename);]]>
+        </snippet>
+        <warning>
+            <p>
+                Don't use <code>application/force-download</code> as <code>Content-Type</code>. It's an ugly
+                hack, not a valid <abbr>MIME</abbr> type and it may cause unexpected behaviour.
+            </p>
+        </warning>
+    </cheat>
+
+    <cheat title="Using HTML" id="html" version="HTML 5">
+        <p>
+            Some modern browsers also support <code>download</code> attribute specified in HTML 5.
+        </p>
+        <snippet language="markup">
+<![CDATA[<a href="test.txt" download>Download me!</a>
+
+<!-- XHTML 5 compliant version -->
+<a href="test.txt" download="download">Download me!</a>]]>
+        </snippet>
+    </cheat>
+
+    <learn-more>
+        <link href="http://www.iana.org/assignments/media-types/media-types.xhtml">List of MIME types</link>
+        <link href="http://caniuse.com/#feat=download">Support for <code>download</code> HTML attribute
+            - caniuse.com</link>
+    </learn-more>
+
+    <keywords>
+        <keyword>php</keyword>
+        <keyword>html</keyword>
+        <keyword>html5</keyword>
+        <keyword>file</keyword>
+        <keyword>download</keyword>
+    </keywords>
+</sheet>

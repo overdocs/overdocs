@@ -1,0 +1,17 @@
+language: php
+
+php:
+    - 5.6
+    - 7.0
+
+before_install:
+  - npm install -g gulp
+
+install:
+    - composer install
+    - npm install
+
+script:
+    - php lint.php
+    - php build.php
+    - gulp ci
