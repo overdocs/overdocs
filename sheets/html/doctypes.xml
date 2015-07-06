@@ -5,24 +5,28 @@
     <summary>List of possible HTML doctypes and differences between them.</summary>
     <cheat title="HTML 5" id="html5">
         <p>
-            HTML 5 provides the simplest <abbr>DTD</abbr>, which is case-insensitive:
+            HTML 5 provides the simplest doctype, which is case-insensitive:
         </p>
         <snippet language="markup">
 <![CDATA[<!DOCTYPE html>]]>
         </snippet>
+        <p>
+            Note that HTML 5 does not have any reference to a <abbr>DTD</abbr> file,
+            because HTML 5+ is not based on it anymore.
+        </p>
     </cheat>
 
     <cheat title="XHTML" id="xhtml">
         <p>
-            <strong>XHTML 1.1</strong> has only one valid DTD declaration:
+            <strong>XHTML 1.1</strong> has only one valid doctype declaration:
         </p>
         <snippet language="markup">
 <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">]]>
         </snippet>
         <p>
-            <strong>XHTML 1.0</strong> provides more DTDs with some differences. The most
-            recommended is of course <em>strict</em>. It does not allow for deprecated tags
+            <strong>XHTML 1.0</strong> provides more doctypes with some differences. The most
+            recommended is of course <em>strict</em>. It does not allow deprecated tags
             and attributes.
         </p>
         <snippet language="markup">
@@ -83,13 +87,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">]]>
             </snippet>
+            <p>
+                Note also that declarations withous system identifier tends to switch the browser into
+                <em>quirks mode</em>.
+            </p>
         </note>
     </cheat>
 
     <learn-more>
         <link href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">W3C QA: valid doctypes list</link>
         <link href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#the-doctype">
-            Doctypes in HTML 5.1 living draft.
+            Doctypes in HTML 5.1 editor's draft.
+        </link>
+        <link href="http://html5doctor.com/html5-check-it-before-you-wreck-it-with-miketm-smith/">
+            HTML5 – Check it Before you Wreck it with Mike[tm] Smith
         </link>
     </learn-more>
 
@@ -97,6 +108,7 @@
         <keyword>html</keyword>
         <keyword>html5</keyword>
         <keyword>dtd</keyword>
+        <keyword>doctype</keyword>
         <keyword>transitional</keyword>
         <keyword>frameset</keyword>
         <keyword>strict</keyword>
