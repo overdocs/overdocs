@@ -19,3 +19,8 @@ Contributing
 
 We would love to have your contributions to the content. Feel free to fork the repository or
 fill the issue on a GitHub. For more details please read [CONTRIBUTING](CONTRIBUTING.md).
+
+That's all!
+-----------
+
+[Open OverDocs](http://overdocs.net/)
