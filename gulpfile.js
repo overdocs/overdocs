@@ -65,7 +65,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['public/less/*.less'], ['less']);
+    gulp.watch(['public/styles/*.less'], ['less']);
     gulp.watch(['sheets/**/*.xml', 'sheet.xsl'], ['lint', 'build']);
 });
 
