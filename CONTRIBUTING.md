@@ -190,7 +190,7 @@ commits, squash them before submitting PR. Commit affecting content should look 
 ```
 [category/sheet-id] change description
 
-Optional longer description, which should not be longer than 72 chars,
+Optional longer description, which should be word-wrapped to 72 chars,
 due to the standard console window width.
 ```
 Example:
