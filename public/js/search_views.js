@@ -135,6 +135,11 @@
         },
 
         updateSearchResults: function (query) {
+            if (query.trim() === '') {
+                this.clear();
+                return;
+            }
+
             var search = new Search({
                 query: query
             });
@@ -142,7 +147,9 @@
 
             if (results.length) {
                 this.ui.search.addClass('search--hasResults');
+                this.ui.search.removeClass('search--hasNoResults');
             } else {
+                this.ui.search.addClass('search--hasNoResults');
                 this.ui.search.removeClass('search--hasResults');
             }
 
@@ -177,6 +184,7 @@
         clear: function () {
             this.resultsView.collection.reset();
             this.ui.search.removeClass('search--hasResults');
+            this.ui.search.removeClass('search--hasNoResults');
         }
     });
 }(OverDocs));

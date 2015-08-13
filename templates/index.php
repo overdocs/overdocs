@@ -32,6 +32,7 @@
         <input class="search-input" type="search" autocomplete="off" autofocus
                placeholder="Search for »styling text selection«">
         <div class="search-results"></div>
+        <div class="search-noResults">No results found for your search.</div>
     </div>
 </script>
 <script id="search-result-template" type="text/html">

@@ -19,7 +19,8 @@
     }
 }
 // Hack for specifity... sorry!
-.search--hasResults .search-input.search-input {
+.search--hasResults .search-input.search-input,
+.search--hasNoResults .search-input.search-input {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -33,6 +34,19 @@
     width: 75%;
 }
 .search--hasResults .search-results {
+    display: block;
+}
+.search-noResults {
+    display: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: @bg-search;
+    text-align: center;
+    width: 75%;
+    padding: 0 16px + 5px 16px 16px + 5px;
+    color: #888;
+}
+.search--hasNoResults .search-noResults {
     display: block;
 }
 .search-result {
