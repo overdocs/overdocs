@@ -52,6 +52,10 @@
         collection: SearchResults,
         cursor: 0,
 
+        events: {
+            'mouseenter .search-result': 'onResultMouseEnter'
+        },
+
         initialize: function () {
             _.bindAll(this, 'render', 'selectNth', 'openSelected', 'selectedView',
                     'moveBy', 'hasNth', 'updateSelection');
@@ -65,9 +69,18 @@
         },
 
         moveBy: function (delta) {
-            if (!this.hasNth(this.cursor + delta)) {
+            if (this.hasNth(this.cursor + delta)) {
                 this.cursor += delta;
                 this.updateSelection();
+            }
+        },
+
+        onResultMouseEnter: function (e) {
+            var $target = $(e.target);
+            var index = this.$('.search-result').index($target);
+
+            if (index >= 0) {
+                this.selectNth(index);
             }
         },
 
@@ -79,11 +92,12 @@
         },
 
         hasNth: function (index) {
-            return (index < 0 || index > this.collection.length - 1);
+            return (index >= 0 && index < this.collection.length);
         },
 
         updateSelection: function () {
             this.$('.search-result--selected').removeClass('search-result--selected');
+
             if (!this.isEmpty()) {
                 this.selectedView().$el.addClass('search-result--selected');
             }
