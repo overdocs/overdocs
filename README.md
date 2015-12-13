@@ -1,6 +1,8 @@
 OverDocs
 ========
 
+[![Build Status](https://travis-ci.org/overdocs/overdocs.svg?branch=master)](https://travis-ci.org/overdocs/overdocs)
+
 OverDocs aims to be practical source of knowledge, both for beginners and advanced
 developers. These first can learn best programming practices, while more experienced
 users can utilize OverDocs as a handy reference complementary to manuals or books.
