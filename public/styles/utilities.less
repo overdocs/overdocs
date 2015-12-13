@@ -61,3 +61,23 @@ a.credits-link:hover {
         content: "overdocs.net";
     }
 }
+
+.fork-us {
+    background: @md-blue-grey-700;
+    color: @md-grey-200;
+    padding: 10px 150px;
+    position: absolute;
+    right: -150px;
+    top: 120px;
+    z-index: 500;
+    transform: rotate(45deg);
+    display: block;
+    &:hover {
+        text-decoration: none;
+        background: @md-blue-grey-800;
+        color: @md-grey-50;
+    }
+    @media screen and (max-device-width: @break-md) {
+        .sr-only;
+    }
+}

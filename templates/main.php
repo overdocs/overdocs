@@ -20,7 +20,6 @@
             <nav class="header-nav" role="navigation">
                 <ul>
                     <li><a href="<?= $app->url('about') ?>">About</a></li>
-                    <li><a href="<?= $github_url ?>">Source</a></li>
                 </ul>
             </nav>
         </div>
