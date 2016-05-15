@@ -44,7 +44,7 @@
         but sharing the same goal - delivering knowledge.
     </p>
 
-    <h4><a href="https://winek.me" class="credits-link">winek</a></h4>
+    <h4><a href="https://olgierd.me" class="credits-link">winek</a></h4>
     <p>
         Nobody has become an expert after a few weeks of education. There is a multitude of outdated
         resources, recommending antipatterns and bad practices. I started OverDocs because I wanted
