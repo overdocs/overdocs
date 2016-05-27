@@ -1,9 +1,8 @@
 cron.php
 /node_modules
 /public/index.json
-/public/styles/*.css
+/public/scripts
+/public/styles
 /vendor/
 /cache/*
 /config/application.local.php
-/public/js/bundle.js
-/public/js/bundle.js.map

@@ -40,21 +40,5 @@
     <div class="search-result-title"><span class="search-result-category">(<%- categoryName %>)</span> <%- title %></div>
     <div class="search-result-summary"><%- summary %></div>
 </script>
-<?php if ($env === 'development'): ?>
-<script src="<?= $base ?>/vendor/zepto.js"></script>
-<script src="<?= $base ?>/vendor/lodash.js"></script>
-<script src="<?= $base ?>/vendor/backbone.js"></script>
-<script src="<?= $base ?>/vendor/fuse.js"></script>
-<script src="<?= $base ?>/vendor/prism.js"></script>
-<script src="<?= $base ?>/js/app.js"></script>
-<script src="<?= $base ?>/js/utils.js"></script>
-<script src="<?= $base ?>/js/models.js"></script>
-<script src="<?= $base ?>/js/views.js"></script>
-<script src="<?= $base ?>/js/search.js"></script>
-<script src="<?= $base ?>/js/search_views.js"></script>
-<script src="<?= $base ?>/js/main.js"></script>
-<script src="<?= $base ?>/js/index.js"></script>
-<?php else: ?>
-<script src="<?= $base ?>/js/bundle.js"></script>
-<?php endif; ?>
+<script src="<?= $base ?>/scripts/index.js"></script>
 <?php $this->end(); ?>
