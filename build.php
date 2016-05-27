@@ -1,6 +1,7 @@
 <?php
 
 use OverDocs\SheetParser;
+use Pimple\Container;
 
 if (PHP_SAPI !== 'cli') {
     die("This script is meant to be run using CLI\n");
@@ -15,7 +16,7 @@ require 'vendor/autoload.php';
 $config = require 'config/application.php';
 
 // Initialize all services in the container
-$app = new Pimple();
+$app = new Container();
 $debug = $app['debug'] = isset($argv[1]) && $argv[1] === '--debug' || $config['debug'];
 require 'src/services.php';
 

@@ -1,7 +1,6 @@
 <?php
 use OverDocs\Template;
 use OverDocs\Application;
-use Silex\Provider\UrlGeneratorServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
 chdir('..');
@@ -11,7 +10,6 @@ $config = require './config/application.php';
 $categories = require './config/categories.php';
 
 $app = new Application();
-$app->register(new UrlGeneratorServiceProvider());
 $app['debug'] = $config['debug'];
 
 Template::$globals['app']          = $app;
@@ -84,14 +82,14 @@ $app->get('/{category}/{sheet}', function (
 })->bind('sheet');
 
 // HTTP Error handling
-$app->error(function (\Exception $e, $code) {
-    if (file_exists('templates/errors/'.$code.'.php')) {
-        $templateName = 'errors/'.$code;
+$app->error(function (\Exception $e) {
+    if (file_exists('templates/errors/'.$e->getStatusCode().'.php')) {
+        $templateName = 'errors/'.$e->getStatusCode();
     } else {
         $templateName = 'errors/error';
     }
 
-    switch ($code) {
+    switch ($e->getStatusCode()) {
         case 400:
             $title = 'Bad request';
             $message = 'Sorry, something is wrong with your browser, try again.';
@@ -114,7 +112,7 @@ $app->error(function (\Exception $e, $code) {
         'message' => $message,
     ]);
 
-    return new Response($response, $code);
+    return new Response($response, $e->getStatusCode());
 });
 
 $app->run();
