@@ -43,7 +43,7 @@ class SheetParser
         $xsl->load('./sheet.xsl');
 
         $proc = new \XSLTProcessor;
-        $proc->importStyleSheet($xsl);
+        $proc->importStylesheet($xsl);
         $proc->setParameter('', 'base_url', $this->config['base_url']);
         $proc->setParameter('', 'images_url', $this->config['base_url'] . '/images/sheets/' . $this->id . '/');
         $proc->registerPHPFunctions([
