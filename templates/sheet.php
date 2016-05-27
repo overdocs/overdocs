@@ -44,7 +44,5 @@
     </article>
 <?php $this->end(); ?>
 <?php $this->block('scripts'); ?>
-<script src="<?= $base ?>/vendor/prism.js"></script>
-<script src="<?= $base ?>/vendor/zepto.js"></script>
-<script src="<?= $base ?>/js/sheet.js"></script>
+<script src="<?= $base ?>/scripts/sheet.js"></script>
 <?php $this->end(); ?>
