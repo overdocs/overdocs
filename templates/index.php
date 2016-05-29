@@ -1,7 +1,11 @@
 <?php $this->inherits('main'); ?>
 <?php $this->block('title'); ?>Cheatsheets for developers — OverDocs.net<?php $this->end(); ?>
+<?php $this->block('precontent'); ?>
+<div class="fork-us-wrapper">
+    <a class="fork-us" href="<?= $github_url ?>">Fork us on GitHub</a>
+</div>
+<?php $this->end(); ?>
 <?php $this->block('content'); ?>
-<a class="fork-us" href="<?= $github_url ?>">Fork us on GitHub</a>
 <section class="intro">
     <div class="container">
         <p class="intro-primary">OverDocs collects the most important APIs, solutions and practices.</p>

@@ -24,6 +24,7 @@
             </nav>
         </div>
     </header>
+    <?php $this->block('precontent'); $this->end(); ?>
     <main>
         <?php $this->block('content'); ?><?php $this->end(); ?>
     </main>
