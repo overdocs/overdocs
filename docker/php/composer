@@ -1,0 +1,11 @@
+#!/bin/bash
+# Fix ownership of output files
+finish() {
+    user_id=$(stat -c '%u:%g' /data/app)
+    chown -R ${user_id} /data/app
+}
+trap finish EXIT
+
+# Call tool with parameters
+php /usr/local/bin/composer.phar "$@"
+exit $?

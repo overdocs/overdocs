@@ -1,0 +1,16 @@
+version: "2"
+services:
+    php:
+        build: docker/php
+        environment:
+            - LOGS_DIR=/data/logs
+        volumes:
+            - .:/data/app
+    nginx:
+        build: docker/nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - .:/data/app
+        links:
+            - php
