@@ -1,8 +1,7 @@
 {
     "autoload": {
-        "psr-4": {"OverDocs\\": "src/"}
+        "psr-4": { "OverDocs\\": "src/" }
     },
-
     "require": {
         "silex/silex": "~2.0"
     }
