@@ -13,7 +13,7 @@ var path       = require('path');
 var ci = process.argv.indexOf('ci') > -1;
 var scriptBundles = {
     index: [
-        'node_modules/zepto/zepto.min',
+        'node_modules/zepto/dist/zepto.min',
         'node_modules/lodash/lodash.min',
         'node_modules/backbone/backbone-min',
         'node_modules/fuse.js/src/fuse.min',
