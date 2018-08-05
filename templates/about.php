@@ -66,7 +66,9 @@
     <h3 id="contact">Contact</h3>
     <p>
          Want to contribute but don't have enough time for Pull Request? Have a question? Or maybe just want
-         to say "hello"? Feel free to email us at <span class="go-away" title="Sorry, anti-spam protection">@</span>.
+         to say "hello"? Feel free to email us at either
+         <span class="go-away-sobak" title="Sorry, anti-spam protection">@</span> (Sobak) or
+         <span class="go-away-winek" title="Sorry, anti-spam protection">@</span> (winek).
     </p>
 </div>
 <?php $this->end(); ?>
